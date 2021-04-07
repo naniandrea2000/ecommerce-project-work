@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MenuModule } from './features/menu/menu.module';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { MenuModule } from './features/menu/menu.module';
     AngularFireModule.initializeApp( environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

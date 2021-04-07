@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
     this.service.FacebookAuth();
   }
 
-  
+  createUser(user){
+    this.service.createUser(user.value);
+  }
 
 }
