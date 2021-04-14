@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'carosello', loadChildren: () => import('./features/carosello/carosello.module').then(m => m.CaroselloModule) },
   { path: 'serie', loadChildren: () => import('./features/cards-serie/cards-serie.module').then(m => m.CardsSerieModule) },
   { path: 'film', loadChildren: () => import('./features/cards-film/cards-film.module').then(m => m.CardsFilmModule) },
-  { path: 'footer', loadChildren: () => import('./features/footer/footer.module').then(m => m.FooterModule) }];
+  { path: 'footer', loadChildren: () => import('./features/footer/footer.module').then(m => m.FooterModule) },
+  { path: 'aggiungi', loadChildren: () => import('./aggiungi/aggiungi.module').then(m => m.AggiungiModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

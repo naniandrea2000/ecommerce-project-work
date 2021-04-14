@@ -11,28 +11,48 @@ import { map } from 'rxjs/operators';
 })
 export class SerieFilmService {
   private dbPath = '/Serie';
+  private dbPath2 = '/Film';
 
   seriesRef: AngularFirestoreCollection<any> = null;
+  filmsRef: AngularFirestoreCollection<any> = null;
 
   constructor(private db: AngularFirestore) {
     this.seriesRef = db.collection(this.dbPath);
+    this.filmsRef = db.collection(this.dbPath2);
   }
 
-  createCustomer(serie: any): void {
+  createSerie(serie: any): void {
     this.seriesRef.add({...serie});
   }
 
-  updateCustomer(key: string, value: any): Promise<void> {
+  updateSerie(key: string, value: any): Promise<void> {
     return this.seriesRef.doc(key).update(value);
   }
 
-  deleteCustomer(key: string): Promise<void> {
+  deleteSerie(key: string): Promise<void> {
     return this.seriesRef.doc(key).delete();
   }
 
-  getCustomersList(): AngularFirestoreCollection<any> {
+  getSerieList(): AngularFirestoreCollection<any> {
     console.log(this.seriesRef);
     return this.seriesRef;
+  }
+
+  createFilm(film: any): void {
+    this.filmsRef.add({...film});
+  }
+
+  updateFilm(key: string, value: any): Promise<void> {
+    return this.filmsRef.doc(key).update(value);
+  }
+
+  deleteFilm(key: string): Promise<void> {
+    return this.filmsRef.doc(key).delete();
+  }
+
+  getFilmList(): AngularFirestoreCollection<any> {
+    console.log(this.filmsRef);
+    return this.filmsRef;
   }
 
   deleteAll() {

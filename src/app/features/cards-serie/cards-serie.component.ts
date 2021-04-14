@@ -16,12 +16,12 @@ export class CardsSerieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCustomersList();
+    this.getFilmList();
     
   }
 
-  getCustomersList() {
-    this.seriesService.getCustomersList().snapshotChanges().pipe(
+  getFilmList() {
+    this.seriesService.getSerieList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ key: c.payload.doc.id, ...c.payload.doc.data() })

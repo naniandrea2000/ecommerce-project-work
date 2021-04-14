@@ -3,15 +3,14 @@
     <div class="masonry-wrapper">
 
         <div class="masonry">
-            <div class="masonry-item">
+            <div class="masonry-item" *ngFor="let serie of serie;">
                 <div class="masonry-content">
-                    <img src="https://www.occhionotizie.it/wp-content/uploads/2020/12/Peaky-Blinders-.jpg" alt="Dummy Image">
-                    <h3 class="masonry-title">Peaky blinders</h3>
-                    <p class="masonry-description">Tommy e i suoi fratelli, chiamati 'peaky blinders' per l'abitudine di cucire delle lamette nella punta dei loro cappelli, controllano il quartiere dove vivono, instillando terrore e obbedienza nei cittadini. La leadership di Tommy
-                        viene messa a dura prova dall'arrivo di un poliziotto di Belfast, il Capo Ispettore Chester Campbell, determinato a ripulire la città dalla melma.</p>
+                    <img src="{{serie.Immagine}}" alt="img">
+                    <h3 class="masonry-title">{{serie.Titolo}}</h3>
+                    <p class="masonry-description">{{serie.Trama}}</p>
                 </div>
             </div>
-            <div class="masonry-item">
+            <!-- <div class="masonry-item">
                 <div class="masonry-content">
                     <img src="https://i0.wp.com/diariodirorschach.com/wp-content/uploads/2019/09/Breaking-Bad.jpg?fit=820%2C541&ssl=1" alt="Dummy Image">
                     <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam dolorum</h3>
@@ -221,7 +220,7 @@
                     <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe sunt unde</h3>
                     <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

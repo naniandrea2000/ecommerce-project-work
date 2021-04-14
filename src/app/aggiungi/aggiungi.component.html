@@ -1,0 +1,62 @@
+<div class="row mt-4">
+    <div class="col-12">
+        <h4>User Registration</h4>
+    </div>
+
+    <div class="col-12">
+        <div class="row" *ngIf="authError">
+            <div class="col-12 alert alert-danger">
+                {{ authError?.message }}
+            </div>
+        </div>
+        <form #userRegForm="ngForm" (ngSubmit)="insertData(userRegForm.value)">
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <label for="Immagine">Img1</label>
+                    <input ngModel #Immagine="ngModel" name="Immagine" type="text" class="form-control" id="Immagine">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="Carosello1">Carosello1</label>
+                    <input ngModel #Carosello1="ngModel" name="Carosello1" type="text" class="form-control" id="Carosello1" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="Carosello2">Carosello2</label>
+                    <input ngModel #Carosello2="ngModel" name="Carosello2" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="Genere">Genere</label>
+                    <input ngModel #Genere="ngModel" name="Genere" type="text" class="form-control">
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <label for="Titolo">Titolo</label>
+                        <input ngModel #Titolo="ngModel" name="Titolo" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <label>Trailer</label>
+                        <input ngModel #Trailer="ngModel" name="Trailer" type="Trailer" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <label for="Trama">Trama</label>
+                        <input ngModel #Trama="ngModel" name="Trama" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
