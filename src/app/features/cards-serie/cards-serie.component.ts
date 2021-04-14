@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { SerieFilmService } from 'src/app/services/serie-film.service';
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards-serie',
@@ -16,7 +17,7 @@ export class CardsSerieComponent implements OnInit {
   preferitiUtente:any = [];
   user: firebase.User;
 
-  constructor(private seriesService:SerieFilmService,private afAuth: AngularFireAuth) {
+  constructor(private seriesService:SerieFilmService,private afAuth: AngularFireAuth,private router:Router) {
   
   }
 
@@ -72,6 +73,7 @@ export class CardsSerieComponent implements OnInit {
       }
     });
     this.seriesService.rimuoviSeriePreferita(uid);
+    this.router.navigateByUrl("/home")
     //this.getPreferitiUtente();
     //window.location.reload();
   }

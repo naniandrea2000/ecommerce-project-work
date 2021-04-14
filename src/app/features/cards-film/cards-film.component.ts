@@ -4,6 +4,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { SerieFilmService } from 'src/app/services/serie-film.service';
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards-film',
@@ -17,7 +18,7 @@ export class CardsFilmComponent implements OnInit {
   preferitiList:any = [];
   preferitiUtente:any = [];
 
-  constructor(private filmsService:SerieFilmService,private loginService:LoginService,private afAuth: AngularFireAuth) {
+  constructor(private filmsService:SerieFilmService,private loginService:LoginService,private afAuth: AngularFireAuth, private router:Router) {
   
   }
 
@@ -73,6 +74,7 @@ export class CardsFilmComponent implements OnInit {
       }
     });
     this.filmsService.rimuoviFilmPreferito(uid);
+    this.router.navigateByUrl("/home")
     //this.getPreferitiUtente();
     //window.location.reload();
   }
