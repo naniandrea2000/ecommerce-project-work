@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) }, 
   { path: 'home', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
   { path: 'signup', loadChildren: () => import('./features/sign-up/sign-up.module').then(m => m.SignUpModule) },
@@ -11,7 +12,11 @@ const routes: Routes = [
   { path: 'serie', loadChildren: () => import('./features/cards-serie/cards-serie.module').then(m => m.CardsSerieModule) },
   { path: 'film', loadChildren: () => import('./features/cards-film/cards-film.module').then(m => m.CardsFilmModule) },
   { path: 'footer', loadChildren: () => import('./features/footer/footer.module').then(m => m.FooterModule) },
-  { path: 'aggiungi', loadChildren: () => import('./aggiungi/aggiungi.module').then(m => m.AggiungiModule) }];
+  { path: 'aggiungi', loadChildren: () => import('./features/aggiungi/aggiungi.module').then(m => m.AggiungiModule) },
+  { path: 'dettaglio', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
+  { path: 'dettaglio/:id', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
+  { path: 'dettaglioFilm', loadChildren: () => import('./features/dettaglio-film/dettaglio-film.module').then(m => m.DettaglioFilmModule) },
+  { path: 'dettaglioFilm/:id', loadChildren: () => import('./features/dettaglio-film/dettaglio-film.module').then(m => m.DettaglioFilmModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

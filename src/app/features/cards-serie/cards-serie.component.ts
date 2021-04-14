@@ -30,8 +30,6 @@ export class CardsSerieComponent implements OnInit {
     ).subscribe(serie => {
       this.serie = serie;
       console.log(this.serie);
-    });
-    
+    }); 
   }
-
 }

@@ -5,7 +5,7 @@
         <div class="masonry">
             <div class="masonry-item" *ngFor="let serie of serie;">
                 <div class="masonry-content">
-                    <img src="{{serie.Immagine}}" alt="img">
+                    <img src="{{serie.Immagine}}" alt="img" routerLink="/dettaglio/{{serie.key}}">
                     <h3 class="masonry-title">{{serie.Titolo}}</h3>
                     <p class="masonry-description">{{serie.Trama}}</p>
                 </div>
