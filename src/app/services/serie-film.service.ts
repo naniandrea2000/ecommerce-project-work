@@ -12,13 +12,21 @@ import { map } from 'rxjs/operators';
 export class SerieFilmService {
   private dbPath = '/Serie';
   private dbPath2 = '/Film';
+  private dbPath3 = '/FilmPreferito';
+  private dbPath4 = '/SeriePreferita';
 
   seriesRef: AngularFirestoreCollection<any> = null;
   filmsRef: AngularFirestoreCollection<any> = null;
+  filmsPrefritiRef: AngularFirestoreCollection<any> = null;
+  seriePreferiteRef: AngularFirestoreCollection<any> = null;
+
+  seriePreferita: any;
 
   constructor(private db: AngularFirestore) {
     this.seriesRef = db.collection(this.dbPath);
     this.filmsRef = db.collection(this.dbPath2);
+    this.filmsPrefritiRef = db.collection(this.dbPath3);
+    this.seriePreferiteRef = db.collection(this.dbPath4);
   }
 
   createSerie(serie: any): void {
@@ -65,5 +73,37 @@ export class SerieFilmService {
       error => {
         console.log('Error: ', error);
       });
+  }
+
+  aggiungiFilmPreferito(key, utente){
+    this.seriePreferita = {
+      Film : key,
+      utente : utente
+    }
+    this.db.collection("/FilmPreferito").add(this.seriePreferita);
+  }
+
+  rimuoviFilmPreferito(key){
+    this.filmsPrefritiRef.doc(key).delete();
+  }
+
+  getFilmPrefritiList(): AngularFirestoreCollection<any> {
+    return this.filmsPrefritiRef;
+  }
+
+  aggiungiSeriePreferita(key, utente){
+    this.seriePreferita = {
+      Serie : key,
+      utente : utente
+    }
+    this.db.collection("/SeriePreferita").add(this.seriePreferita);
+  }
+
+  rimuoviSeriePreferita(key){
+    this.seriePreferiteRef.doc(key).delete();
+  }
+
+  getSeriePrefriteList(): AngularFirestoreCollection<any> {
+    return this.seriePreferiteRef;
   }
 }

@@ -6,6 +6,18 @@
             <div class="masonry-item" *ngFor="let serie of serie;">
                 <div class="masonry-content">
                     <img src="{{serie.Immagine}}" alt="img" routerLink="/dettaglio/{{serie.key}}">
+                    <div *ngIf="serieTraPreferiti(serie.key)===false">
+                        <div class="icon" (click)="aggiungiSeriePreferito(serie.key)">
+                            <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i>
+                            <!--<i class="fas fa-heart " style="font-size: 20pt;color:red "></i>-->
+                        </div>
+                    </div>
+                    <div *ngIf="serieTraPreferiti(serie.key)===true">
+                        <div class="icon" (click)="rimuoviSeriePreferito(serie.key)">
+                            <!-- <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i> -->
+                            <i class="fas fa-heart " style="font-size: 20pt;color:red "></i>
+                        </div>
+                    </div>
                     <h3 class="masonry-title">{{serie.Titolo}}</h3>
                     <p class="masonry-description">{{serie.Trama}}</p>
                 </div>
