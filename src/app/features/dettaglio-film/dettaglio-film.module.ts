@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DettaglioFilmRoutingModule } from './dettaglio-film-routing.module';
 import { DettaglioFilmComponent } from './dettaglio-film.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { YouTubePlayer } from '@angular/youtube-player';
+import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { YouTubePlayer } from '@angular/youtube-player';
     CommonModule,
     DettaglioFilmRoutingModule,
     SharedModule,
-    YouTubePlayer
+    YouTubePlayerModule
   ]
 })
 export class DettaglioFilmModule { }

@@ -9,8 +9,6 @@ import { SerieFilmService } from 'src/app/services/serie-film.service';
   styleUrls: ['./dettaglio-film.component.scss']
 })
 export class DettaglioFilmComponent implements OnInit {
-
-  
  listaFilm: any;
  film:any;
  id:any;
@@ -25,7 +23,7 @@ export class DettaglioFilmComponent implements OnInit {
   }
 
   getFilmList() {
-    this.seriesService.getSerieList().snapshotChanges().pipe(
+    this.seriesService.getFilmList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ key: c.payload.doc.id, ...c.payload.doc.data() })

@@ -33,4 +33,18 @@ export class CardsFilmComponent implements OnInit {
     });
   }
 
+  
+  gestisciPreferiti(id:number){
+    // console.log(this.serie);
+    // this.serie.forEach(element => {
+    //   if(element.id===id){
+    //     element.preferiti=!element.preferiti;
+    //     this.myHttpService.putSerie(element).subscribe(()=>{
+    //       this.caricaSerie(this.controllo);
+    //     }); 
+    //     console.log(element);
+    //   }
+    // });
+  }
+
 }

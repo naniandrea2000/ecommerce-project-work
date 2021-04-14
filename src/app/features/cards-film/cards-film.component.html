@@ -5,7 +5,11 @@
         <div class="masonry">
             <div class="masonry-item" *ngFor="let film of film;">
                 <div class="masonry-content">
-                    <img src="{{film.Immagine}}" alt="img">
+                    <img src="{{film.Immagine}}" alt="img" routerLink="/dettaglioFilm/{{film.key}}">
+                    <div class="icon">
+                        <i class="far fa-heart" style="font-size: 20pt;float:right;"></i>
+                        <!-- <i class="fas fa-heart" style="font-size: 20pt;color:red"></i> -->
+                    </div>
                     <h3 class="masonry-title">{{film.Titolo}}</h3>
                     <p class="masonry-description">{{film.Trama}}</p>
                 </div>
