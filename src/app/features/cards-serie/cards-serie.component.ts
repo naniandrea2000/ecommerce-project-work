@@ -73,7 +73,7 @@ export class CardsSerieComponent implements OnInit {
     });
     this.seriesService.rimuoviSeriePreferita(uid);
     //this.getPreferitiUtente();
-    window.location.reload();
+    //window.location.reload();
   }
 
   serieTraPreferiti(key){

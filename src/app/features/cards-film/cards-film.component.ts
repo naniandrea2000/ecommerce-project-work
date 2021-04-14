@@ -74,7 +74,7 @@ export class CardsFilmComponent implements OnInit {
     });
     this.filmsService.rimuoviFilmPreferito(uid);
     //this.getPreferitiUtente();
-    window.location.reload();
+    //window.location.reload();
   }
 
   filmTraPreferiti(key){

@@ -3,24 +3,43 @@
     <div class="masonry-wrapper">
 
         <div class="masonry">
-            <div class="masonry-item" *ngFor="let serie of serie;">
+            <div class="masonry-item" *ngFor="let serie of serieConsigliate;">
                 <div class="masonry-content">
                     <img src="{{serie.Immagine}}" alt="img" routerLink="/dettaglio/{{serie.key}}">
-                    <div *ngIf="serieTraPreferiti(serie.key)===true">
-                        <div class="icon" (click)="rimuoviSeriePreferito(serie.key)">
-                            <!-- <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i> -->
+                    <!-- <div *ngIf="serieTraPreferiti(serie.key)===false">
+                        <div class="icon" (click)="aggiungiSeriePreferito(serie.key)">
+                            <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i>
                             <i class="fas fa-heart " style="font-size: 20pt;color:red "></i>
                         </div>
                     </div>
-                    <div *ngIf="serieTraPreferiti(serie.key)===false">
-                        <div class="icon" (click)="aggiungiSeriePreferito(serie.key)">
+                    <div *ngIf="serieTraPreferiti(serie.key)===true">
+                        <div class="icon" (click)="rimuoviSeriePreferito(serie.key)">
                             <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i>
-                            <!--<i class="fas fa-heart " style="font-size: 20pt;color:red "></i>-->
+                            <i class="fas fa-heart " style="font-size: 20pt;color:red "></i>
                         </div>
-                    </div>
-
+                    </div> -->
                     <h3 class="masonry-title">{{serie.Titolo}}</h3>
                     <p class="masonry-description">{{serie.Trama}}</p>
+                </div>
+            </div>
+            <div class="masonry-item" *ngFor="let film of filmConsigliati;">
+                <div class="masonry-content">
+                    <img src="{{film.Immagine}}" alt="img" routerLink="/dettaglioFilm/{{film.key}}">
+                    <!-- <div *ngIf="filmTraPreferiti(film.key)===false">
+                        <div class="icon" (click)="aggiungiFilmPreferito(film.key)">
+                            <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i>
+                            <i class="fas fa-heart " style="font-size: 20pt;color:red "></i>
+                        </div>
+                    </div>
+                    <div *ngIf="filmTraPreferiti(film.key)===true">
+                        <div class="icon" (click)="rimuoviFilmPreferito(film.key)">
+                            <i class=" far fa-heart " style="font-size: 20pt;float:right; "></i>
+                            <i class="fas fa-heart " style="font-size: 20pt;color:red "></i>
+                        </div>
+                    </div> -->
+
+                    <h3 class="masonry-title ">{{film.Titolo}}</h3>
+                    <p class="masonry-description ">{{film.Trama}}</p>
                 </div>
             </div>
             <!-- <div class="masonry-item">

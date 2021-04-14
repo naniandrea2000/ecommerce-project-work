@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'dettaglio', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
   { path: 'dettaglio/:id', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
   { path: 'dettaglioFilm', loadChildren: () => import('./features/dettaglio-film/dettaglio-film.module').then(m => m.DettaglioFilmModule) },
-  { path: 'dettaglioFilm/:id', loadChildren: () => import('./features/dettaglio-film/dettaglio-film.module').then(m => m.DettaglioFilmModule) }];
+  { path: 'dettaglioFilm/:id', loadChildren: () => import('./features/dettaglio-film/dettaglio-film.module').then(m => m.DettaglioFilmModule) },
+  { path: 'consigliati', loadChildren: () => import('./features/consigliati/consigliati.module').then(m => m.ConsigliatiModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
