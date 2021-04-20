@@ -45,6 +45,7 @@ export class CardsSerieComponent implements OnInit {
     }); 
   }
   getPreferitiUtente() {
+    this.preferitiUtente=[];
     this.seriesService.getSeriePrefriteList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
@@ -72,8 +73,10 @@ export class CardsSerieComponent implements OnInit {
         uid=preferiti.key;
       }
     });
-    this.seriesService.rimuoviSeriePreferita(uid);
-    this.router.navigateByUrl("/home")
+    this.seriesService.rimuoviSeriePreferita(uid).then(()=>{
+      this.getPreferitiUtente();
+    });
+    //this.router.navigateByUrl("/home")
     //this.getPreferitiUtente();
     //window.location.reload();
   }

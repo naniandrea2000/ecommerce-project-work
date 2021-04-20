@@ -100,7 +100,7 @@ export class SerieFilmService {
   }
 
   rimuoviSeriePreferita(key){
-    this.seriePreferiteRef.doc(key).delete();
+    return this.seriePreferiteRef.doc(key).delete();
   }
 
   getSeriePrefriteList(): AngularFirestoreCollection<any> {

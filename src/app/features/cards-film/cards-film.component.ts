@@ -46,6 +46,7 @@ export class CardsFilmComponent implements OnInit {
   }
 
   getPreferitiUtente() {
+    this.preferitiUtente=[];
     this.filmsService.getFilmPrefritiList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
@@ -74,7 +75,9 @@ export class CardsFilmComponent implements OnInit {
       }
     });
     this.filmsService.rimuoviFilmPreferito(uid);
-    this.router.navigateByUrl("/home")
+    this.filmsService.rimuoviSeriePreferita(uid).then(()=>{
+      this.getPreferitiUtente();
+    });
     //this.getPreferitiUtente();
     //window.location.reload();
   }
