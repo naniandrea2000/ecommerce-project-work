@@ -29,7 +29,9 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl("/home")
   }
 
-
+  goToLogin(){
+    this.router.navigateByUrl("/login")
+  }
 
 
 }
